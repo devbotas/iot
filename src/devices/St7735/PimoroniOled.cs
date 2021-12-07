@@ -18,7 +18,7 @@ namespace Iot.Device.St7735
         /// <param name="spiDevice">TODO</param>
         /// <param name="controlPin">TODO</param>
         public PimoroniOled(SpiDevice spiDevice, int controlPin)
-            : base(spiDevice, controlPin, 80, 180)
+            : base(spiDevice, controlPin, 80, 160)
         {
         }
 

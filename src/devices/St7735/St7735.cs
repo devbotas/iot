@@ -160,11 +160,13 @@ namespace Iot.Device.St7735
             {
                 if (value.Length - bytesSent > 4096)
                 {
-                    _spi.Write(valueSpan.Slice(bytesSent, bytesSent + 4096));
+                    _spi.Write(valueSpan.Slice(bytesSent, 4096));
+                    bytesSent += 4096;
                 }
                 else
                 {
                     _spi.Write(valueSpan.Slice(bytesSent, value.Length - bytesSent));
+                    bytesSent += value.Length - bytesSent;
                 }
             }
         }
